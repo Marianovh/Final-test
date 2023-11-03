@@ -13,7 +13,7 @@ export default function Home() {
 
   const handleFormSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log("email:" + formData.email + "     clave:" + formData.password);
+    // console.log("email:" + formData.email + "     clave:" + formData.password);
     try {
       const response = await axios.post(
         "https://api-2-xgyd.onrender.com/api/login",
@@ -32,6 +32,7 @@ export default function Home() {
       router.replace("./catalogo");
     } catch (error) {
       console.error("Error al iniciar sesión:", error);
+
       console.log(
         JSON.stringify(formData), // Convierte formData a JSON
         {
@@ -67,7 +68,7 @@ export default function Home() {
     <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-blue-100">
             Iniciar sesión
           </h2>
         </div>
@@ -114,7 +115,9 @@ export default function Home() {
           <div>
             <button
               type="submit"
-              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-rose-700 hover:bg-rose-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="group relative w-full flex justify-center py-3 
+              px-4 border border-transparent text-sm font-medium rounded-md
+               text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                 <svg

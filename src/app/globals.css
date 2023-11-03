@@ -16,8 +16,36 @@
   }
 }
 
-body {
+/* body {
   color: rgb(var(--foreground-rgb));
   background-color: #0093e9;
   background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+} */
+
+body {
+  background-color: #06000c;
+  background-image: linear-gradient(
+    45deg,
+    #06000c 0%,
+    #410c75 24%,
+    #090233 49%,
+    #290652 75%,
+    #06146f 100%
+  );
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.card {
+  /* background-color: rgba(198, 56, 211, 0.219); */
+  /* background-color: rgba(198, 56, 211, 0.322); */
+  background-color: rgba(255, 255, 255, 0.377);
+  box-shadow: 2px 2px 8px 2px rgba(255, 255, 255, 0.322);
+  /* background-color:#d83ac349; */
+  border: 5px;
+  color: white;
 }

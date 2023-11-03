@@ -1,56 +1,62 @@
 // plist.tsx
 import React, { useState } from "react";
-
+import ProductList from "./pfilter";
 interface FilterFormProps {
-  onFilter: (categoria: string, precioMinimo: number) => void;
+  onFilter: (marca: string, precioMinimo: number) => void;
 }
 
 const FilterForm: React.FC<FilterFormProps> = ({ onFilter }) => {
-  const [categoria, setCategoria] = useState<string>("");
+  const [marca, setMarca] = useState<string>("");
   const [precioMinimo, setPrecioMinimo] = useState<number | "">("");
 
+  const marcasDisponibles = ["bolik", "Marca 2", "Marca 3", "Marca 4"]; // Define tus opciones de marca aquí
+
   const filtrarProductos = () => {
-    onFilter(categoria, precioMinimo === "" ? 0 : +precioMinimo);
+    onFilter(marca, precioMinimo === "" ? 0 : +precioMinimo);
   };
 
   return (
     <div className="p-4 shadow">
-      <h2 className="text-xl font-semibold mb-4">Filtro</h2>
       <form
         onSubmit={(e) => e.preventDefault()}
         className="flex flex-row items-center gap-4 gap-8 columns-3"
       >
         <div className="basis-1/4 items-center">
-          <label htmlFor="categoria" className="text-gray-700 font-semibold">
-            Categoría:
+          <label htmlFor="marca" className="text-gray-100 font-semibold">
+            Marca:
           </label>
           <select
-            id="categoria"
-            value={categoria}
-            onChange={(e) => setCategoria(e.target.value)}
-            className="w-3/4 ml-5 border p-2 rounded shadow"
+            id="marca"
+            value={marca}
+            onChange={(e) => setMarca(e.target.value)}
+            className="w-3/4 ml-5 border p-2 rounded shadow text-gray-800"
           >
-            {/* Opciones de categoría aquí */}
+            <option value="">Selecciona una marca</option>
+            {marcasDisponibles.map((marca, index) => (
+              <option key={index} value={marca}>
+                {marca.toString()}
+              </option>
+            ))}
           </select>
         </div>
 
         <div className="basis-1/4 items-center">
-          <label htmlFor="precioMinimo" className="text-gray-700 font-semibold">
+          <label htmlFor="precioMinimo" className="text-gray-100 font-semibold">
             Precio mínimo:
           </label>
           <input
             type="number"
             id="precioMinimo"
             value={precioMinimo}
-            onChange={(e) => setPrecioMinimo(e.target.value)}
-            className="w-3/4 border p-2 ml-5 rounded shadow"
+            onChange={(e) => setPrecioMinimo(parseInt(e.target.value, 10))}
+            className="w-3/4 border p-2 ml-5 rounded shadow text-gray-800"
           />
         </div>
 
         <div className="w-full sm:w-1/2 md:w-1/5 lg:w-1/8">
           <button
             onClick={filtrarProductos}
-            className="md:w-1/2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"
+            className="md:w-1/2 bg-indigo-500 text-white px-4 py-2 rounded hover-bg-blue-700"
           >
             Filtrar
           </button>
