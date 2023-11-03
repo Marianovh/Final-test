@@ -78,10 +78,6 @@ const FilterApp: React.FC = () => {
     const storedToken = localStorage.getItem("token");
 
     if (storedToken) {
-      // Realiza una solicitud al servidor para validar el token, si es necesario.
-      // Puedes usar la misma ruta del servidor para validar el token.
-
-      // Si el token es válido, redirige al usuario a la página deseada.
       router.replace("../");
     }
   };
