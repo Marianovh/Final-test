@@ -29,7 +29,8 @@ interface CartItem {
 
 function Tienda() {
   const router = useRouter();
-
+  const emailFromLocalStorage = localStorage.getItem("correo");
+  const emailValue = emailFromLocalStorage || "";
   const [q, setq] = useState<number>(0);
   const [cart, setCart] = useState<CartItem[]>([]);
   const [total, setTotal] = useState<number>(0);
@@ -202,6 +203,7 @@ function Tienda() {
               </div>
               <div className="mt-4">
                 <form>
+                  <input type="hidden" name="email" value={emailValue} />
                   <Carrito
                     items={cart}
                     total={total}
