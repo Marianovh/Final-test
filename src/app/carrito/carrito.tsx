@@ -30,6 +30,7 @@ class Carrito extends Component<CarritoProps> {
             <input type="hidden" name="nombre" value={item.nombre} />
             <input type="hidden" name="desc" value={item.descripcion} />
             <input type="hidden" name="cantidad" value={item.cantidad} />
+            <input type="hidden" name="precio" value={item.preciodescuento} />
           </p>
           <button
             className="bg-red-500 text-white px-3 py-1 rounded-full hover:bg-red-600"
