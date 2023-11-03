@@ -9,7 +9,7 @@ const FilterForm: React.FC<FilterFormProps> = ({ onFilter }) => {
   const [marca, setMarca] = useState<string>("");
   const [precioMinimo, setPrecioMinimo] = useState<number | "">("");
 
-  const marcasDisponibles = ["bolik", "Marca 2", "Marca 3", "Marca 4"]; // Define tus opciones de marca aquí
+  const marcasDisponibles = ["ASUS", "CORSAIR", "LOGITECH"];
 
   const filtrarProductos = () => {
     onFilter(marca, precioMinimo === "" ? 0 : +precioMinimo);

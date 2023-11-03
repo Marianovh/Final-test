@@ -6,19 +6,14 @@ import { useRouter } from "next/navigation";
 
 interface Product {
   id: number;
-  categoria: string;
-  precio: number;
-  _id: number;
   nombre: string;
   marca: string;
-  disponibilidad: number;
+  precio: number;
   descuento: number;
   preciodescuento: number;
   imagen: string;
   descripcion: string;
   cantidad: number;
-  Identificador: number;
-  Disponibilidad: string;
 }
 
 const FilterApp: React.FC = () => {
@@ -97,9 +92,11 @@ const FilterApp: React.FC = () => {
         <div className="min-h-screen">
           <button
             onClick={cerrarSesion}
-            className="group relative w-full flex justify-center py-3 px-4 border border-transparent 
+            className="group relative w-full flex justify-center py-3 px-4 
+            border border-transparent 
             text-sm font-medium rounded-md text-white
-             bg-rose-700 hover:bg-rose-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 rounded"
+             bg-rose-700 hover:bg-rose-800 focus:outline-none focus:ring-2 
+             focus:ring-offset-2 focus:ring-indigo-500 rounded"
           >
             Cerrar Sesión
           </button>
