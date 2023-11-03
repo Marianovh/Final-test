@@ -29,11 +29,11 @@ interface CartItem {
 
 function Tienda() {
   const router = useRouter();
-  if (typeof window !== "undefined") {
-    const emailFromLocalStorage = localStorage.getItem("correo");
-    const emailValue = emailFromLocalStorage || "";
-    // Resto del código que utiliza localStorage
-  }
+
+  const emailFromLocalStorage = localStorage.getItem("correo");
+  const emailValue = emailFromLocalStorage || "";
+  // Resto del código que utiliza localStorage
+
   const [q, setq] = useState<number>(0);
   const [cart, setCart] = useState<CartItem[]>([]);
   const [total, setTotal] = useState<number>(0);
