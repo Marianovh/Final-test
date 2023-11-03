@@ -2,6 +2,7 @@
 import React, { useState, useEffect, FormEvent, ChangeEvent } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { emit } from "process";
 
 export default function Home() {
   const [formData, setFormData] = useState<{ email: string; password: string }>(
@@ -16,7 +17,8 @@ export default function Home() {
     // console.log("email:" + formData.email + "     clave:" + formData.password);
     try {
       const response = await axios.post(
-        "https://api-2-xgyd.onrender.com/api/login",
+        // "https://api-2-xgyd.onrender.com/api/login",
+        "http://localhost:3000/api/login",
         JSON.stringify(formData), // Convierte formData a JSON
         {
           headers: {
@@ -29,7 +31,8 @@ export default function Home() {
       localStorage.setItem("token", newToken);
       console.log("login key: " + localStorage.getItem("token"));
       setToken(newToken);
-      router.replace("./catalogo");
+      localStorage.setItem("correo", formData.email);
+      router.replace("./tienda");
     } catch (error) {
       console.error("Error al iniciar sesión:", error);
 
@@ -54,9 +57,9 @@ export default function Home() {
     if (storedToken) {
       // Realiza una solicitud al servidor para validar el token, si es necesario.
       // Puedes usar la misma ruta del servidor para validar el token.
-
+      localStorage.setItem("correo", formData.email);
       // Si el token es válido, redirige al usuario a la página deseada.
-      router.replace("./catalogo");
+      router.replace("./tienda");
     }
   };
 

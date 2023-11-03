@@ -7,11 +7,10 @@ interface FilterFormProps {
 
 const FilterForm: React.FC<FilterFormProps> = ({ onFilter }) => {
   const [marca, setMarca] = useState<string>("");
-  const [precioMinimo, setPrecioMinimo] = useState<number | "">("");
-
+  const [precioMinimo, setPrecioMinimo] = useState<number | "">(0);
   const marcasDisponibles = ["ASUS", "CORSAIR", "LOGITECH"];
-
   const filtrarProductos = () => {
+    // Si no se ha seleccionado una marca o el precio mínimo es 0, muestra todos los productos
     onFilter(marca, precioMinimo === "" ? 0 : +precioMinimo);
   };
 
@@ -31,7 +30,7 @@ const FilterForm: React.FC<FilterFormProps> = ({ onFilter }) => {
             onChange={(e) => setMarca(e.target.value)}
             className="w-3/4 ml-5 border p-2 rounded shadow text-gray-800"
           >
-            <option value="">Selecciona una marca</option>
+            <option value="">Todos</option>
             {marcasDisponibles.map((marca, index) => (
               <option key={index} value={marca}>
                 {marca.toString()}
@@ -50,6 +49,7 @@ const FilterForm: React.FC<FilterFormProps> = ({ onFilter }) => {
             value={precioMinimo}
             onChange={(e) => setPrecioMinimo(parseInt(e.target.value, 10))}
             className="w-3/4 border p-2 ml-5 rounded shadow text-gray-800"
+            min={0}
           />
         </div>
 

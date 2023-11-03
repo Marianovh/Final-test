@@ -2,7 +2,7 @@
 import React from "react";
 
 interface Product {
-  id: number;
+  ID: number;
   nombre: string;
   marca: string;
   precio: number;
@@ -25,12 +25,15 @@ const ProductList: React.FC<ProductListProps> = ({ productos }) => {
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {productos.map((producto) => (
-          <div key={producto.id} className="card rounded p-4 shadow mb-5">
-            <img
-              src={producto.imagen}
-              alt={producto.nombre}
-              className="w-60 h-60 object-cover mb-2" // Estilo de la imagen
-            />
+          <div key={producto.ID} className="card rounded p-4 shadow mb-5">
+            <center>
+              <img
+                src={producto.imagen}
+                alt={producto.nombre}
+                className="w-60 h-60 object-cover mb-2" // Estilo de la imagen
+              />
+            </center>
+
             <h2 className="text-lg text-gray-500 font-semibold">
               {producto.nombre}
             </h2>

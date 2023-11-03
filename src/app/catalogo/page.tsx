@@ -5,7 +5,7 @@ import FilterForm from "./plist";
 import { useRouter } from "next/navigation";
 
 interface Product {
-  id: number;
+  ID: number;
   nombre: string;
   marca: string;
   precio: number;
@@ -23,7 +23,8 @@ const FilterApp: React.FC = () => {
 
   useEffect(() => {
     // Realiza una solicitud a la API y carga los productos en productos
-    const apiUrl = "https://api-2-xgyd.onrender.com/api/productos"; // Reemplaza con la URL de tu API
+    // const apiUrl = "https://api-2-xgyd.onrender.com/api/productos"; // Reemplaza con la URL de tu API
+    const apiUrl = "http://localhost:3000/api/productos"; // Reemplaza con la URL de tu API
     const token = localStorage.getItem("token"); // Obtiene el token del localStorage
     console.log("sis esta almacenado> " + token);
     const fetchProducts = async () => {
