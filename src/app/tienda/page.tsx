@@ -95,6 +95,8 @@ function Tienda() {
     if (existingItem) {
       if (existingItem.cantidad > 1) {
         existingItem.cantidad -= 1;
+      } else if (existingItem.cantidad < 1) {
+        setTotal(0);
       } else {
         const updatedCart = cart.filter((item) => item.ID !== product.ID);
         setCart(updatedCart);
