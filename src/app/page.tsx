@@ -17,8 +17,8 @@ export default function Home() {
     // console.log("email:" + formData.email + "     clave:" + formData.password);
     try {
       const response = await axios.post(
-        // "https://api-2-xgyd.onrender.com/api/login",
-        "http://localhost:3000/api/login",
+        "https://api-2-xgyd.onrender.com/api/login",
+        // "http://localhost:3000/api/login",
         JSON.stringify(formData), // Convierte formData a JSON
         {
           headers: {

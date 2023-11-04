@@ -46,8 +46,8 @@ function Tienda() {
   useEffect(() => {
     // Realiza una solicitud a la API y carga los productos en productos
     // Ajusta la URL de la API según tu caso
-    // const apiUrl = "https://api-2-xgyd.onrender.com/api/productos";
-    const apiUrl = "http://localhost:3000/api/productos";
+    const apiUrl = "https://api-2-xgyd.onrender.com/api/productos";
+    // const apiUrl = "http://localhost:3000/api/productos";
     const token = localStorage.getItem("token");
 
     const fetchProducts = async () => {

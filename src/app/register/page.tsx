@@ -43,7 +43,9 @@ const RegistroForm = () => {
     }
     try {
       const response = await fetch(
-        `http://localhost:3000/api/registro/${formData.dpi}`,
+        // `http://localhost:3000/api/registro/${formData.dpi}`,
+        `https://api-2-xgyd.onrender.com/api/registro/${formData.dpi}`,
+
         {
           method: "POST",
           headers: {
