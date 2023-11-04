@@ -64,14 +64,14 @@ function Tienda() {
           throw new Error("Error al cargar productos desde la API");
         }
 
-        const data = response.data();
+        const data = response.data;
         setProducts(data.productos);
         console.log(data);
       } catch (error) {
         console.error(error);
       }
     };
-
+    checkTokenValidity();
     fetchProducts();
   }, []);
 
