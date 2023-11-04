@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Productos from "../productos/productos";
 import Carrito from "../carrito/carrito";
 import { useRouter } from "next/navigation";
+import axios from "axios";
 interface Product {
   ID: number;
   nombre: string;
@@ -56,16 +57,14 @@ function Tienda() {
           headers.token = token;
         }
 
-        const response = await fetch(apiUrl, {
-          method: "GET", // Método de solicitud, ajústalo según tu API
-          headers,
-        });
+        // Utiliza Axios en lugar de fetch
+        const response = await axios.get(apiUrl, { headers });
 
-        if (!response.ok) {
+        if (response.status !== 200) {
           throw new Error("Error al cargar productos desde la API");
         }
 
-        const data = await response.json();
+        const data = response.data();
         setProducts(data.productos);
         console.log(data);
       } catch (error) {
