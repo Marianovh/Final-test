@@ -1,8 +1,9 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, FormEvent, ChangeEvent } from "react";
 import Productos from "../productos/productos";
 import Carrito from "../carrito/carrito";
 import { useRouter } from "next/navigation";
+import axios from "axios";
 interface Product {
   ID: number;
   nombre: string;
@@ -130,6 +131,21 @@ function Tienda() {
       router.replace("../");
     }
   };
+  const [formData, setFormData] = useState<{
+    email: string;
+    nombre: string;
+    desc: string;
+    cantidad: number;
+    precio: number;
+    total: number;
+  }>({
+    email: "",
+    nombre: "",
+    desc: "",
+    cantidad: 0,
+    precio: 0,
+    total: 0,
+  });
   return (
     <>
       <div className=" min-h-screen">
@@ -205,14 +221,13 @@ function Tienda() {
                 </button>
               </div>
               <div className="mt-4">
-                <form>
-                  <input type="hidden" name="email" value={emailValue} />
-                  <Carrito
-                    items={cart}
-                    total={total}
-                    onRemoveFromCart={removeFromCart}
-                  />
-                </form>
+                <input type="hidden" name="email" value={emailValue} />
+                <Carrito
+                  items={cart}
+                  total={total}
+                  onRemoveFromCart={removeFromCart}
+                />
+                <button>Pagar</button>
               </div>
             </div>
           </div>

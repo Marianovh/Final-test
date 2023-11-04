@@ -120,7 +120,7 @@ export default function Home() {
               type="submit"
               className="group relative w-full flex justify-center py-3 
               px-4 border border-transparent text-sm font-medium rounded-md
-               text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+               text-white bg-blue-700  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                 <svg
@@ -139,6 +139,15 @@ export default function Home() {
               </span>
               Iniciar sesión
             </button>
+            <div className="mt-5">
+              <center>
+                <a href="./register/">
+                  <p className="text-center text-1xl font-extrabold hover:text-blue-300 text-blue-100">
+                    ¿No tienes una cuenta?
+                  </p>
+                </a>
+              </center>
+            </div>
           </div>
         </form>
       </div>
