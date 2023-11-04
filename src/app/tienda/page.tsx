@@ -71,7 +71,7 @@ function Tienda() {
         console.error(error);
       }
     };
-    checkTokenValidity();
+
     fetchProducts();
   }, []);
 
