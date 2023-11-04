@@ -250,7 +250,7 @@ const RegistroForm = () => {
             <center>
               <button
                 type="submit"
-                className="w-1/4 bg-green-500 text-white font-medium py-2 rounded-md hover:bg-green-600"
+                className="w-1/4 bg-green-500 text-white font-medium py-2 rounded-md mr-6 hover:bg-green-600"
               >
                 Registrar
               </button>
@@ -259,7 +259,7 @@ const RegistroForm = () => {
                 className="w-1/4 bg-rose-500 text-white font-medium py-2 rounded-md hover:bg-rose-600"
                 href="../"
               >
-                Registrar
+                Regresar
               </a>
             </center>
           </div>
